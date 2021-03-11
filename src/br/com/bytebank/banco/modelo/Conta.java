@@ -102,18 +102,14 @@ public abstract class Conta extends Object {
 
 	@Override
 	public boolean equals(Object ref) {
-
-		Conta outra = (Conta) ref;
-
-		if (this.agencia != outra.agencia) {
-			return false;
+		 Conta outra = (Conta) ref;
+		if(this.agencia == outra.agencia && this.numero == outra.numero) {
+			System.out.println("Conta ja existe");
+			return true;
 		}
-
-		if (this.numero != outra.numero) {
-			return false;
-		}
-
-		return true;
+		 
+		 System.out.println("Conta não está na lista");
+		 return false;
 	}
 
 	@Override
