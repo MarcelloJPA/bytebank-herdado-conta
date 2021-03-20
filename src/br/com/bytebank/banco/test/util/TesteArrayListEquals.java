@@ -1,36 +1,39 @@
 package br.com.bytebank.banco.test.util;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
 
 public class TesteArrayListEquals {
 
-        public static void main(String[] args) {
+	public static void main(String[] args) {
+		
+//		Conta cc1 = new ContaCorrente(22, 22);
+//		Conta cc2 = new ContaCorrente(22, 22);
+//		
+//		boolean igual = cc1.ehIgual(cc2);
+//		System.out.println(igual);
+		
 
-        //Generics
-        List<Conta> lista = new ArrayList<Conta>();
+		//Generics
+		ArrayList<Conta> lista = new ArrayList<Conta>();
+		
+		Conta cc = new ContaCorrente(22, 11);
+		lista.add(cc);
+		
+		Conta cc2 = new ContaCorrente(22, 22);
+		lista.add(cc2);
+		
+		Conta cc3 = new ContaCorrente(22, 22);
+		boolean existe = lista.contains(cc3);
+		
+		System.out.println("JÃ¡ existe? " + existe);
+		
+		for(Conta conta : lista) {
+			System.out.println(conta);
+		}
+		
+	}
 
-        Conta cc = new ContaCorrente(22, 11);
-        Conta cc2 = new ContaCorrente(22, 11);
-      
-        lista.add(cc);
-        
-        //O método contains verifica se contém cc2 na lista R:false, a referencia cc2 realmente não está na lista, 
-        //porém o numero da conta é o mesmo que cc, isso acontece porque o contains utiliza o equals, e ele compara as referencias 
-        //e não as propriedades devemos implementar nossa regra de negocio. Implementando um sobrescrita de equals na classe Conta
-        boolean existe = lista.contains(cc2); 
-      
-        System.out.println(existe);
-        
-        
-                 
-        
-         for(Conta conta : lista) {
-                System.out.println(conta);
-         
-        }
-    }
 }
