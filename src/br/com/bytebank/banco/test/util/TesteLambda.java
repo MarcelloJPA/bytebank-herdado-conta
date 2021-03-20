@@ -45,8 +45,11 @@ public class TesteLambda {
 		lista.add(cc3);
 		lista.add(cc4);
 		
+		
+		/*Organizando arraylist por ordem númerica(Interface Comparator) utilizando LAMBDAS*/
 		lista.sort( (c1, c2) -> Integer.compare(c1.getNumero(), c2.getNumero()) );
 		
+		/*Organizando lista por ordem alfabética UTILIZANDO LAMBDAS*/
 		Comparator<Conta> comp = (Conta c1, Conta c2) -> {
 				String nomeC1 = c1.getTitular().getNome();
 				String nomeC2 = c2.getTitular().getNome();
@@ -55,6 +58,7 @@ public class TesteLambda {
 		
 		lista.sort( comp );
 		
+		/*forEach usando Lambdas Utilizando a Interface Consumer*/
 		lista.forEach( (conta) -> System.out.println(conta + ", " + conta.getTitular().getNome()));
 	}
 }
