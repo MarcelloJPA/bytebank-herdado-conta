@@ -1,12 +1,9 @@
 package br.com.bytebank.banco.modelo;
 
 
-/**
- * Classe representa a moldura de uma conta
- * 
- * @author Nico Steppat
- *
- */
+/*Uma classe abstract é restrita impedindo a criação de objetos, somente aceitará do tipo ContaCorrente e ContaPoupanca*/
+/*Extends Object para sobrescrever o metodo equals*/
+/*Interface Comparable para implementar a comparação de dos valores e colocar na ordem */
 public abstract class Conta extends Object implements Comparable<Conta>{
 
     protected double saldo;
