@@ -26,6 +26,9 @@ public class TesteArrayListEquals {
 		lista.add(cc2);
 		
 		Conta cc3 = new ContaCorrente(22, 22);
+		
+		/*Contains verifica se existe a referência cc3 na lista, porém para que ele verifique se existe outra propriedade com ag 22 e conta 22
+		foi preciso sobrescrever o método EQUALS dentro da classe CONTA e implementar a regra de negocio*/
 		boolean existe = lista.contains(cc3);
 		
 		System.out.println("Já existe? " + existe);
